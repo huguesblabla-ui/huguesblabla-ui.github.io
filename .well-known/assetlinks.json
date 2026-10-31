@@ -1,0 +1,10 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "fr.hugues.panier",
+      "sha256_cert_fingerprints": ["73:F4:2F:C4:C3:90:0E:B1:26:9D:BD:47:07:B5:68:E3:16:A8:84:A8:ED:97:9E:15:05:83:54:70:97:1B:0D:4A"]
+    }
+  }
+]
