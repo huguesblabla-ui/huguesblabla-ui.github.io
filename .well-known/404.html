@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Invitation Panier</title>
+<style>
+  body { font-family: system-ui, sans-serif; max-width: 30rem; margin: 2rem auto; padding: 0 1rem; line-height: 1.5; }
+  code { display: block; word-break: break-all; background: #eef2ee; padding: .75rem; border-radius: .5rem; margin: .75rem 0; }
+  button { font-size: 1rem; padding: .6rem 1rem; }
+</style>
+</head>
+<body>
+<h1>Tu es invité·e dans une liste Panier</h1>
+<p>Ouvre ce lien depuis le téléphone où l’appli Panier est installée : elle s’ouvre et te propose de rejoindre la liste.</p>
+<p>Si rien ne s’ouvre, copie ce code, puis dans Panier : <strong>Mes listes</strong>, <strong>Rejoindre une liste</strong>, et colle-le.</p>
+<code id="code"></code>
+<button id="copy" type="button">Copier le code</button>
+<script>
+  // Le code est la dernière partie de l'adresse : /j/<code>. Il ne quitte jamais cette page.
+  var code = location.pathname.split('/').filter(Boolean).pop() || '';
+  if (code === 'j' || code === '404.html' || code === 'index.html') code = '';
+  document.getElementById('code').textContent = code || 'Aucun code dans ce lien.';
+  document.getElementById('copy').onclick = function () {
+    if (code && navigator.clipboard) navigator.clipboard.writeText(code);
+  };
+</script>
+</body>
+</html>
